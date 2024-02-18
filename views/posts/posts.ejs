@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <%- include('../partials/menu') %>
+    <h1>Posts</h1>
+    <% posts.forEach((post) => { %>
+        <h2><%= post.titulo %></h2>
+        <p><%= post.conteudo %></p>
+        <table>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <form action="/posts/del/<%= post.id %>?_method=DELETE" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="submit" value="Deletar">
+                    </form>
+                </td>
+                <td>
+                    <form action="/posts/editar/<%= post.id %>" method="get">
+                        <input type="submit" value="Editar">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    <% }) %>
+</body>
+</html>

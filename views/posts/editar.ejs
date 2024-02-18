@@ -1,0 +1,19 @@
+<!-- views/editar.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Post</title>
+</head>
+<body>
+    <%- include('../partials/menu') %>
+    <h1>Editar Post</h1>
+    <form action="/posts/editar/<%= post.id %>?_method=PUT" method="POST">
+        <input type="hidden" name="_method" value="PUT" />
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" name="titulo" value="<%= post.titulo %>" required><br>
+        <label for="conteudo">Conteúdo:</label><br>
+        <textarea id="conteudo" name="conteudo" required><%= post.conteudo %></textarea><br>
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>
