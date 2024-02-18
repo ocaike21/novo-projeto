@@ -1,4 +1,4 @@
-# Blog-MVC
+# Novo Projeto
 Um CRUD simples para testar novas aprendizagens do Express
 
 ## A rota '/cadastro' apresentará um formulário de cadastro de posts.
